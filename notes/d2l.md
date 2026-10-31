@@ -2,7 +2,7 @@
 
 1：创建人工数据集
 
-···Python
+```Python
 
 import os
 
@@ -24,7 +24,7 @@ with open(data_file, 'w') as f: # 'w'表示删去文件中所有内容重新开�
     
 2：使用pandas工具转变为表格形式
 
-···Python
+```Python
 
 import pandas as pd
 
@@ -32,7 +32,7 @@ data = pd.read_csv(data_file) # data出厂时会被赋予一些工具
 
 3：处理只含缺失值列
 
-···Python
+```Python
 
 inputs, outputs = data.iloc[:, 0:2], data.iloc[:, 2] # iloc用于列数索引
 
@@ -40,7 +40,7 @@ inputs = inputs.fillna(inputs.mean()) # mean()用于取平均值，fillna用于�
 
 4.处理不只含缺失值列
 
-···Python
+```Python
 
 inputs = pd.get_dummies(inputs, dummy_na=True)
 
@@ -56,7 +56,7 @@ inputs = pd.get_dummies(inputs, dummy_na=True)
 
 5.转换为张量格式
 
-···Python
+```Python
 
 import torch
 
