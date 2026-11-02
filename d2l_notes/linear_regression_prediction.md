@@ -30,7 +30,7 @@ def squared_loss(y_hat, y):
 def sgd(params, lr, batch_size):
     with torch.no_grad(): # 更新参数时不需要记录计算图
         for param in params:
-            param -= lr * param.grad / batch_size
+            param -= lr * param.grad / batch_size # 在计算导数时把十组数据求和，因此需要求导数的平均值
             param.grad.zero_()
 w = torch.normal(0, 0.01, size=(2, 1), requires_grad=True)
 b = torch.zeros(1, requires_grad=True)
@@ -54,3 +54,4 @@ print(f'学到的 w: {w.reshape(true_w.shape).detach().numpy()}, 学到的 b: {b
 # 算一下误差
 print(f'w 的估计误差: {true_w - w.reshape(true_w.shape)}')
 print(f'b 的估计误差: {true_b - b}')
+```
