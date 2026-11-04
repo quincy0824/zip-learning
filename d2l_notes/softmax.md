@@ -18,6 +18,7 @@
 <img width="614" height="145" alt="image" src="https://github.com/user-attachments/assets/f72fc7e9-0df5-434d-bd00-3950aaebf323" />
 <img width="409" height="108" alt="image" src="https://github.com/user-attachments/assets/915a4066-16ba-4fc0-9eeb-61ca5d40d09c" />
 <img width="470" height="101" alt="image" src="https://github.com/user-attachments/assets/1160a71f-fc0e-4839-ae3d-4cca9c1e9cda" />
+
 <img width="246" height="50" alt="image" src="https://github.com/user-attachments/assets/05d86055-cab1-4bbb-bbe2-3ed15c012b01" />
 这里就解释了接下来数据的变化情况
 
