@@ -9,5 +9,5 @@
 2.我们现在需要w,b的初始值，即(784,10)的矩阵和(10,)的数组
 
 3.写到这里，我们回忆一下我们现在要做什么：我们要求Loss分别对w,b的导数
+<img width="614" height="145" alt="image" src="https://github.com/user-attachments/assets/f72fc7e9-0df5-434d-bd00-3950aaebf323" />
 
-<img width="670" height="92" alt="image" src="https://github.com/user-attachments/assets/162c3fa7-903f-4f35-92c6-94c0772801c6" />
