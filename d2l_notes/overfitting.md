@@ -21,4 +21,14 @@
 
 明显降低，进而使w反常增大，所以为了使Loss值不发生明显波动，我们将剩下未被覆盖的神经元除以(1-p),使Loss的期望值几本不变
 
-但这时新问题出现了，我们把未被覆盖
+```Python
+def net(X):
+    X = X.reshape((-1, num_inputs))
+    H = relu(X @ W1 + b1)  
+    
+    # 新增2：在隐藏层输出后，加上 Dropout（丢弃概率设为 0.5）
+    H = F.dropout(H, p=0.5, training=True) 
+    
+    return (H @ W2 + b2)
+```
+
