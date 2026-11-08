@@ -21,6 +21,7 @@
 <img width="470" height="101" alt="image" src="https://github.com/user-attachments/assets/1160a71f-fc0e-4839-ae3d-4cca9c1e9cda" />
 
 <img width="246" height="50" alt="image" src="https://github.com/user-attachments/assets/05d86055-cab1-4bbb-bbe2-3ed15c012b01" />
+
 这里就解释了接下来数据的变化情况
 
 6.转置后的原始数据为(784,256)，乘上dz后还是(256,10)的矩阵，变为(784,10)，正好和w的矩阵形状一致，而dz后的(256,10)矩阵，因为b在广播时复制256份，因此每列相加求平均得到(10,)，也正好与b的矩阵相同，至此，我们可以更新w,b并完成了一整轮的训练，下面是代码部分
