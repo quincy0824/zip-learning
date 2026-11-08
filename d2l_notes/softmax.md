@@ -15,6 +15,7 @@
 5.写到这里，我们回忆一下我们现在要做什么：我们要求Loss分别对w,b的导数
 
 想要搞明白接下来的所有流程，我们不妨缩减一下数据量，不妨只有一张图片，两个像素，两个类别，我们看看整个过程发生了什么
+
 <img width="614" height="145" alt="image" src="https://github.com/user-attachments/assets/f72fc7e9-0df5-434d-bd00-3950aaebf323" />
 <img width="409" height="108" alt="image" src="https://github.com/user-attachments/assets/915a4066-16ba-4fc0-9eeb-61ca5d40d09c" />
 <img width="470" height="101" alt="image" src="https://github.com/user-attachments/assets/1160a71f-fc0e-4839-ae3d-4cca9c1e9cda" />
