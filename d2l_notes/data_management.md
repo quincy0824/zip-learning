@@ -62,9 +62,34 @@ class SharedNet(nn.Module):
         self.layer_a = shared_layer
         self.layer_b = shared_layer
 
+但其实在很多时候，我们很难将每一层的参数都写死，因此我们希望让模型根据输入的数据自己判断参数的大小
+
+```Python
+import torch
+from torch import nn
+
+class MyBlock(nn.Module):
+    def __init__(self, out_dim):
+        super().__init__()
+        self.fc1 = nn.LazyLinear(128)  
+        self.relu = nn.ReLU()
+        self.fc2 = nn.Linear(128, out_dim)
+        
     def forward(self, x):
-        x = self.layer_a(x)
-        x = self.layer_b(x) 
-        return x
-net = SharedNet()
-```
+        return self.fc2(self.relu(self.fc1(x)))
+
+net = MyBlock(out_dim=10)
+
+# 1. 先造个假数据，让网络跑一次，触发初始化
+dummy_x = torch.randn(1, 784) 
+net(dummy_x) # 跑完这一行，fc1.weight 的形状才真正变成 (128, 784)
+
+# 2. 此时有了真实的矩阵，再用自定义初始化覆盖它
+def init_weights(m):
+    if isinstance(m, (nn.Linear, nn.LazyLinear)):
+        nn.init.xavier_uniform_(m.weight)
+        nn.init.zeros_(m.bias)
+
+net.apply(init_weights) # 统一覆盖
+
+ 
